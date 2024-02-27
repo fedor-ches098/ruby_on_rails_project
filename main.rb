@@ -25,7 +25,9 @@ class Game
 
   def pre_start
     @player.add_card(@deck, 2)
+    puts "Player add cards: #{@player.show_cards}. Points: #{@player.points}"   
     @dealer.add_card(@deck, 2)
+    puts 'Dealer add cards: ****'
     add_bank(@player, 10)
     add_bank(@dealer, 10)
     puts "Bank is #{@bank}"
@@ -48,6 +50,7 @@ class Game
       @player.skip_move
     when 2
       @player.add_card(@deck)
+      "Player points: #{@player.points}" 
     when 3
       result
     end
