@@ -81,11 +81,24 @@ class Game
       remove_bank(@dealer, @bank / 2)
       puts "Player cards: #{@player.show_cards}. Player points: #{@player.points}. Player money: #{@player.money}"
       puts "Dealer cards: #{@dealer.show_cards}. Dealer points: #{@dealer.points}. Dealer money: #{@dealer.money}"
+    elsif @dealer.points > 21
+      puts "Player win!"
+      remove_bank(@player, @bank)
+      puts "Player cards: #{@player.show_cards}. Player points: #{@player.points}. Player money: #{@player.money}"
+      puts "Dealer cards: #{@dealer.show_cards}. Dealer points: #{@dealer.points}. Dealer money: #{@dealer.money}"
+    elsif @player.points > 21
+      puts 'Dealer win!'
+      remove_bank(@dealer, @bank)
+      puts "Player cards: #{@player.show_cards}. Player points: #{@player.points}. Player money: #{@player.money}"
+      puts "Dealer cards: #{@dealer.show_cards}. Dealer points: #{@dealer.points}. Dealer money: #{@dealer.money}"
     end
     again 
   end
 
   def auto_result
+    puts "AUTO"
+    p @dealer.points
+    p @player.points
     result if @player.cards.count == 3 && @dealer.cards.count == 3
   end
 
