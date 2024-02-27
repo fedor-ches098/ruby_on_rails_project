@@ -50,7 +50,7 @@ class Game
       @player.skip_move
     when 2
       @player.add_card(@deck)
-      "Player points: #{@player.points}" 
+      puts "Player cards: #{@player.show_cards}. Points: #{@player.points}"  
     when 3
       result
     end
