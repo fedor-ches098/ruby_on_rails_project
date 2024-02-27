@@ -96,9 +96,6 @@ class Game
   end
 
   def auto_result
-    puts "AUTO"
-    p @dealer.points
-    p @player.points
     result if @player.cards.count == 3 && @dealer.cards.count == 3
   end
 
